@@ -13,7 +13,7 @@ class RestaurantServiceTest {
     Restaurant restaurant;
     LocalTime openingTime;
     LocalTime closingTime;
-    List<String> item_selected=new ArrayList<>();
+
     //REFACTOR ALL THE REPEATED LINES OF CODE
 
     @BeforeEach
@@ -23,8 +23,7 @@ class RestaurantServiceTest {
         restaurant = service.addRestaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
-        item_selected.add("Sweet corn soup");
-        item_selected.add("Vegetable lasagne");
+
     }
 
 
@@ -90,16 +89,5 @@ class RestaurantServiceTest {
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    //TDD
-    // Added selected Menu items should return  the order amount correctly and menu names  should be taken in the
-    //String format and the return the value in amount(integer)
-    @Test
-    public void  added_selected_menu_items_should_display_order_value(){
-        item_selected.add("Sweet corn soup");
-        item_selected.add("Vegetable lasagne");
-        int order_value=398;
-        int amount= service.ordervalue(item_selected );
-        assertEquals(amount,order_value);
-    }
 
 }
