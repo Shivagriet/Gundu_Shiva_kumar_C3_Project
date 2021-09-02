@@ -24,8 +24,7 @@ class RestaurantTest {
         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
-        item_selected.add("Sweet corn soup");
-        item_selected.add("Vegetable lasagne");
+
     }
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //-------FOR THE 2 TESTS BELOW, YOU MAY USE THE CONCEPT OF MOCKING, IF YOU RUN INTO ANY TROUBLE
@@ -94,9 +93,11 @@ class RestaurantTest {
     public void  added_selected_menu_items_should_display_order_value(){
         item_selected.add("Sweet corn soup");
         item_selected.add("Vegetable lasagne");
-        int order_value=398;
+        int order_value=388;
         int amount= restaurant.ordervalue(item_selected );
         assertEquals(amount,order_value);
+
+
     }
 
 }
